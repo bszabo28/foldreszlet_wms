@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMT_MS_Capabilities version="1.1.1">
+  <Service>
+    <Name>OGC:WMS</Name>
+    <Title>OENY HRSZ proxy</Title>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="${PUBLIC_BASE}/wms?"/>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <DCPType><HTTP><Get>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="${PUBLIC_BASE}/wms?"/>
+        </Get></HTTP></DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <DCPType><HTTP><Get>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="${PUBLIC_BASE}/wms?"/>
+        </Get></HTTP></DCPType>
+      </GetMap>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+    </Exception>
+    <Layer>
+      <Title>OENY HRSZ</Title>
+      <SRS>EPSG:23700</SRS>
+      <LatLonBoundingBox minx="16.1" miny="45.7" maxx="22.9" maxy="48.6"/>
+      <Layer queryable="0">
+        <Name>hrsz:foldreszlet</Name>
+        <Title>Foldreszlet</Title>
+        <SRS>EPSG:23700</SRS>
+        <LatLonBoundingBox minx="16.1" miny="45.7" maxx="22.9" maxy="48.6"/>
+        <BoundingBox SRS="EPSG:23700" minx="421000" miny="48000" maxx="935000" maxy="366000"/>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMT_MS_Capabilities>
